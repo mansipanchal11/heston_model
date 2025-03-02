@@ -9,32 +9,14 @@ This project explores the application of the **Heston Stochastic Volatility Mode
   1. Monte Carlo Simulation for option pricing using the Heston model.  
   2. Model calibration using market data to improve pricing accuracy.  
 
-## Theoretical Background  
-
-The **Heston Model** is a stochastic volatility model that assumes volatility follows a mean-reverting square-root process. It is defined as:  
-
-\[
-dS_t = \mu S_t dt + \sqrt{v_t} S_t dW_t^S
-\]
-
-\[
-dv_t = \kappa (\theta - v_t) dt + \sigma \sqrt{v_t} dW_t^v
-\]
-
-where:  
-- \( S_t \) is the asset price  
-- \( v_t \) is the variance  
-- \( W_t^S \) and \( W_t^v \) are two correlated Wiener processes  
-- \( \mu, \kappa, \theta, \sigma \) are model parameters  
-
 ## Implementation  
 
-### 1️⃣ Monte Carlo Simulation  
+### 1. Monte Carlo Simulation  
 - **Methodology**: Simulated asset paths using the **Euler-Maruyama scheme** for numerical stability.  
 - **Resources**: Python (`numpy`, `pandas`, `matplotlib`), `scipy`, `quantlib`.  
 - **Results**: Obtained option prices but noticed discrepancies with expected market values.  
 
-### 2️⃣ Model Calibration  
+### 2. Model Calibration  
 - **Methodology**: Optimized model parameters using real market option prices.  
 - **Algorithm**: Used Least Squares to minimize errors between Heston model prices and observed prices.  
 - **Results**: Improved accuracy but some discrepancies remained, likely due to:  
